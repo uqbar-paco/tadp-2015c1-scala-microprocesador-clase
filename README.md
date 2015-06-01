@@ -3,7 +3,7 @@ tadp2014c1-scala-objetofuncional-microprocesador
 
 Este proyecto esta separado en varios proyectos pequeños de microporcesador en el que se iŕan introduciendo nuevos conceptos del paradigma funcional sobre el de objetos.
 
-* objetos-puro: Ejercicio inicial resolviendo el problema del microprocesador con visitors.
+* objetos-puro: Ejercicio inicial resolviendo el problema del microprocesador aplicando el patrón [Visitor](http://en.wikipedia.org/wiki/Visitor_pattern).
 * functional-mutable: Ejercicio pasando de objetos a funcional con Pattern Matching.
 * functional-inmutable: Ejercicio cambiando el microporcesador para que haya inmutabilidad.
 
