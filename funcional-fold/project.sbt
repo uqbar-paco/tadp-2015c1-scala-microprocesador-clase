@@ -1,6 +1,6 @@
-name := "Microprocesador Objetos-Funcional I"
+name := "Microprocesador Objetos-Funcional III"
 
-description := "2. Ejercicio de Microprocesador reemplazando el visitor por pattern matching"
+description := "3. Ejercicio de Microprocesador reemplazando la recursividad por una reducción"
 
 scalaVersion := "2.11.4"
 

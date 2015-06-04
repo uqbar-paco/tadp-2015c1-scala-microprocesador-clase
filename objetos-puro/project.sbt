@@ -1,6 +1,6 @@
 name := "Microprocesador Objetos Puro"
 
-description := "Ejercicio de Microporcesador en paradigmas de objetos solamente"
+description := "Ejercicio de Microprocesador en paradigmas de objetos solamente"
 
 scalaVersion := "2.11.4"
 
