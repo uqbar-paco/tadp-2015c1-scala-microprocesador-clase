@@ -5,6 +5,7 @@ abstract class Instruccion(val bytes: Int = 1)
 case object NOP extends Instruccion
 case object ADD extends Instruccion
 case object MUL extends Instruccion
+case object DIV extends Instruccion
 case object SWAP extends Instruccion
 case object HALT extends Instruccion
 

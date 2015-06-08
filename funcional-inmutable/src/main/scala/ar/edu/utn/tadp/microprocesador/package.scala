@@ -16,9 +16,9 @@ package object microprocesador {
 
   def ejecutar(micro: Microprocesador, programa: Instruccion*): ResultadoDeEjecucion = programa.toList match {
     case Nil => Ejecutando(micro)
-    case HALT :: _ => Halt(micro)
     case instruccionActual :: restantes =>
       val resultado = instruccionActual match {
+        case HALT => Halt(micro)
         case IFNZ(instruccionesInternas @ _*) =>
           if (micro.a != 0)
             ejecutar(micro pc_+= instruccionActual.bytes,
@@ -28,7 +28,12 @@ package object microprocesador {
               }
           else Ejecutando(micro pc_+= instruccionActual.bytes +
             instruccionesInternas.map(_.bytes).sum + END.bytes)
-
+        
+        case DIV => 
+          if(micro.b == 0)
+            Error(micro, "Division por 0.")
+          Ejecutando(micro.guardar(micro.a/micro.b))
+            
         case otra =>
           val siguienteMicro = otra match {
             case NOP => micro
@@ -46,6 +51,7 @@ package object microprocesador {
         case Ejecutando(micro) => ejecutar(micro, restantes: _*)
         case x => x
       }
+      
   }
 
   // ****************************************************************
